@@ -43,7 +43,7 @@ public class PopBack {
     return head;
   }
 
-  static void print(Node head){
+  static void print(Node head) {
     Node temp = head;
     while(temp != null) {
       System.out.println(temp.data);
