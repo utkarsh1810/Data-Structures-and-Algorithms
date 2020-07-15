@@ -1,7 +1,7 @@
 
 public class LinkList {
   
-  // Node head;
+  static Node head;
   static class Node {
     int data;
     Node next;
@@ -18,12 +18,21 @@ public class LinkList {
     Node third = new Node(20);
     Node forth = new Node(25);
 
-    // head = first;
-
     //Attaching them together to form a linklist.
+    head = first;
     first.next = second;
     second.next = third;
     third.next = forth;
 
+    //To print linked list
+    print(head);
   }
+  static void print(Node head){
+    Node temp = head;
+    while(temp != null) {
+      System.out.println(temp.data);
+      temp = temp.next;
+    }
+  }
+  
 }
