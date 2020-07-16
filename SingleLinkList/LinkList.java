@@ -31,6 +31,8 @@ public class LinkList {
     Node temp = head;
     while(temp != null) {
       System.out.println(temp.data);
+      if(temp.next != null)
+        System.out.print("->");
       temp = temp.next;
     }
   }
