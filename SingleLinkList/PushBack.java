@@ -51,8 +51,9 @@ public class PushBack {
     Node temp = head;
     System.out.println("The linked-list is :");
     while(temp != null) {
-
-      System.out.print(temp.data+"->");
+      System.out.print(temp.data);
+      if(temp.next != null)
+        System.out.print("->");
       temp = temp.next;
     }
   }
