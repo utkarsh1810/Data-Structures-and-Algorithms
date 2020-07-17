@@ -26,7 +26,8 @@ public class PushFront {
     first.next = second;
     second.next = third;
     third.next = forth;
-     
+
+    System.out.println("Enter value to add before the linked-list:");     
     Scanner sc = new Scanner(System.in);
     int toInsert = sc.nextInt();
     sc.close(); 
@@ -39,8 +40,10 @@ public class PushFront {
   } 
   static Node addItem(Node head, int toInsert) {
     Node nowAtFirst = new Node(toInsert); // Data to append in front of the list
+    if(head == null) {
+      nowAtFirst.next = null;  //If the linked-list is empty
+    }
     nowAtFirst.next = head;   // Point new node to first node of the linklist
-      // point head of linklist to the newly added element
     return nowAtFirst;
   } 
   static void print(Node head) {
