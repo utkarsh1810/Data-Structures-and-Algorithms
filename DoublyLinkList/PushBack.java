@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 public class PushBack {
   static Node head;
   static class Node {
@@ -42,20 +42,21 @@ public class PushBack {
     while(head != null) {
       System.out.print(head.data);
       if(head.next != null) 
-        System.out.print("->");
+        System.out.print("<->");
      head = head.next;
     }
   }
   static void toprint(Node head) {
-    Node tail = head;
-    while(tail.next != null)
-      tail = tail.next;
+    Node temp = head; //Pointer to find the last node of the linked-list
+    while(temp.next != null)
+      temp = temp.next;
       System.out.println("\nThe reverse of the linked-list is :");
-    while(tail != head){
-      System.out.print(tail.data+"->");
-      tail = tail.prev;
+    while(temp != head){
+      System.out.print(temp.data+"<->");
+      temp = temp.prev; //Printing data of the linked-list with prev pointer (pointing backward node)
     }
-    System.out.println(tail.data);
+    System.out.println(temp.data); //To print the first element i.e. head of the list
+    //As the printing loop terminates at the head with out printing it
 
      
   }
