@@ -29,10 +29,16 @@ class Stack {
   {
     return top == -1;
   }
+
   public boolean isFull() // true if stack is full
   {
     return top == size;
   }
+
+  public int peak() {
+    return StackArray[top];
+  }
+
   public void print() {
     int temp = size-1;
     System.out.println("The stack is :");
@@ -42,14 +48,14 @@ class Stack {
     }
   }
 }
-class ithArray {
+class withArray { 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.println("Please enter operations you want to enter :");
     int size = sc.nextInt();
     Stack stk = new Stack(size);
     while(size > 0) {
-      System.out.println("Please enter 1 for Push(), 2 for Pop(), 3 to print the Stack");
+      System.out.println("Please enter 1 for Push(), 2 for Pop(), 3 to print() 4 to peak() the Stack");
       int entry = sc.nextInt();
       if(entry == 1) {
         int data = sc.nextInt();
@@ -59,6 +65,10 @@ class ithArray {
         stk.pop();
       else if(entry == 3)
         stk.print();
+      else if(entry == 4) {
+        int latestEntry = stk.peak();
+        System.out.println(latestEntry);
+      }
       else 
         System.out.println("Please enter valid entry :");
       size--;
