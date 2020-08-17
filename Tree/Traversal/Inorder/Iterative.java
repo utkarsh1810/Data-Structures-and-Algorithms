@@ -11,7 +11,7 @@ class Node {
   }
 }
 
-class Inorder {
+class Iterative {
   Node root;
 
   void inorder() {
@@ -31,9 +31,8 @@ class Inorder {
       curr = curr.right;
     }
   } 
-
   public static void main(String[] args) {
-    Inorder tree = new Inorder();
+    Iterative tree = new Iterative();
     tree.root = new Node(1);
     tree.root.left = new Node(2);
     tree.root.right = new Node(3);
