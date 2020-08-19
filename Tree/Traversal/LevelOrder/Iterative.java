@@ -16,23 +16,25 @@ class Iterative {
 
   Node root;
   void levelOrder() {
-    if(root == null) 
+    if(root == null)     // If tree is empty
       return;
     
   Queue<Node> q = new LinkedList<>();
   q.add(root);
   System.out.println("Level order traversal of the tree is :");
-  while(true) {
 
+  while(true) {
     int qSize = q.size();
-    if(qSize == 0) 
+    if(qSize == 0)    // Loop will break when queue will empty
       break;
     
-    while(qSize > 0) {
-      Node temp = q.peek();
-      System.out.print(temp.data + " ");
+    while(qSize > 0) {  
+      // Because of traversing acc to qSize each element get chance to check its left and right
+      Node temp = q.peek();    // To get the root 
+      System.out.print(temp.data + " "); 
       q.remove();
-      if(temp.left != null) 
+      // Both if condition will help to add left as well right element to add in sequence
+      if(temp.left != null)  
         q.add(temp.left);
       if(temp.right != null) 
         q.add(temp.right);
@@ -40,7 +42,6 @@ class Iterative {
     }
     System.out.println();
   }
-
 }
   public static void main(String[] args) {
     Iterative tree = new Iterative();
@@ -50,6 +51,12 @@ class Iterative {
     tree.root.left.left = new Node(4); 
     tree.root.left.right = new Node(5); 
     tree.root.right.right = new Node(6); 
+     // Tree is like : 
+                    //       1
+                    //      / \
+                    //     2    3
+                    //   /  \    \  
+                    //  4   5     6
 
     tree.levelOrder();
   }

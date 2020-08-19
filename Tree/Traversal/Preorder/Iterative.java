@@ -14,22 +14,27 @@ class Node {
 class Iterative {
   Node root;
 
-  void inorder() {
+  void preorder() {
     if (root == null)     // If tree is empty
       return;
 
     Stack<Node> stk = new Stack<Node>();
-    Node curr = root;
+    stk.push(root);
 
-    while (curr != null || stk.size() > 0) {
-      while (curr != null) {
-        stk.push(curr);    // Inserting left elements 
-        curr = curr.left;  
-      }
-      curr = stk.pop();   // Poping as printing start from the last left node than root
-      System.out.println(curr.data + " ");
-      curr = curr.right;  // Right after poping left as it needs to print at last
-    }
+    while (stk.empty() == false) {      
+            // Pop the top item from stack and print it 
+            Node temp = stk.peek(); 
+            System.out.print(temp.data + " "); 
+            stk.pop(); 
+  
+            // Push right and left children of the popped node to stack 
+            if (temp.right != null) { 
+                stk.push(temp.right); 
+            } 
+            if (temp.left != null) { 
+                stk.push(temp.left); 
+            } 
+        } 
   } 
   public static void main(String[] args) {
     Iterative tree = new Iterative();
@@ -45,6 +50,6 @@ class Iterative {
                     //   /  \  
                     //  4   5 
 
-    tree.inorder();
+    tree.preorder();
   }
 }
