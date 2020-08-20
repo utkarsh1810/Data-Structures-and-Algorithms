@@ -9,7 +9,7 @@ class Node {
     data = item;
     left = right = null;
   }
-}
+} 
 
 class Iterative {
   Node root;
@@ -44,7 +44,7 @@ class Iterative {
                     //     2    3
                     //   /  \  
                     //  4   5 
-
+    System.out.println("Inorder traversal of the tree is :");
     tree.inorder();
   }
 }

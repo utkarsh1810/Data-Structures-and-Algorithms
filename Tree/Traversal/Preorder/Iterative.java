@@ -49,7 +49,7 @@ class Iterative {
                     //     2    3
                     //   /  \  
                     //  4   5 
-
+    System.out.println("Preorder traversal of the tree is :");
     tree.preorder();
   }
 }
