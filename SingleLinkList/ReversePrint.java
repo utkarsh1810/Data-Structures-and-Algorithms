@@ -24,6 +24,7 @@ public class ReversePrint {
      System.out.println("\nReversed linked-list is");
      reverse(head);
    }
+   // To create the link list
    static Node addAtEnd(Node head , int entry) {
      Node newNode = new Node(entry);
      if(head == null) {
@@ -36,6 +37,7 @@ public class ReversePrint {
      temp.next = newNode;
      return head;
    }
+   // To print the link list
    static void print(Node head) {
     System.out.println("The linked-list is :");
     while(head != null) {
@@ -46,13 +48,13 @@ public class ReversePrint {
       head = head.next;
     }
    }
+   // To print reverse order of the link list
    static void reverse(Node head) {
      if(head != null) {
-       reverse(head.next);
+       reverse(head.next);  // Recursive next call up to last node
        if(head.next != null)
         System.out.print("->");
-       System.out.print(head.data);
-       
+       System.out.print(head.data);   
      }
    }
 }
