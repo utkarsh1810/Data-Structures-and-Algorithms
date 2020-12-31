@@ -18,6 +18,7 @@ class Insert {
     else if(key < root.data) {         
       if(root.left != null)  
         return find(key, root.left);  //To find accurate positon at left(as its smaller) than root
+        
        return root;         // If we found the exact position to insert the new node   --1
     }  
     else if(key > root.data) {

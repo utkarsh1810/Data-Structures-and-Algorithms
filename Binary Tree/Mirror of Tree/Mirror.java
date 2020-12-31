@@ -1,4 +1,5 @@
-public class Recursive {
+import java.util.*;
+public class Mirror {
   static class Node {
     int data;
     Node left;
@@ -10,15 +11,24 @@ public class Recursive {
     }
   }
 
-  static void postorder(Node root) {
+  static void inorder(Node root) {  // Inorder traversal of binary tree
     if(root == null) 
       return;
-    postorder(root.left); // Moves to left most child
+    inorder(root.left); 
 
-    System.out.print(root.data+ " ");  // Prints data befor right and after left
+    System.out.print(root.data+ " "); 
 
-    postorder(root.right); // Moves to the right most child
+    inorder(root.right); 
   }
+  
+ static Node mirror(Node root) {
+     if(root == null) 
+        return null;
+        Node mrr = new Node(root.data);  // Creating new Tree 
+        mrr.left = mirror(root.right);   // Assigning left to the right side 
+        mrr.right = mirror(root.left);   // Assigning right to the left side 
+        return mrr;
+ }
   public static void main(String[] args) {
     Node root = new Node(1);
     root.left = new Node(2); 
@@ -34,7 +44,11 @@ public class Recursive {
                     //   /  \  / \
                     //  4   5 6   7
     System.out.println("Inorder traversal of the tree is :");
-    postorder(root);
+    inorder(root);
+    Node rooot = new Node(root.data);
+    rooot = mirror(root);
+    System.out.println("Inorder traversal of the mirror tree is :");
+    inorder(rooot);
   }
   
 }

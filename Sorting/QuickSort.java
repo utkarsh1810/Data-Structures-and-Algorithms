@@ -27,6 +27,7 @@ public class QuickSort {
       quicksort(arr, pt+1, n);
     }
   }
+  
 
   static int partition(int arr[], int lb , int n) {
     int pivot = arr[n];
@@ -39,7 +40,7 @@ public class QuickSort {
         arr[i] = arr[j];
         arr[j] = temp; 
       }
-    }
+    } 
     int temp = arr[i+1];
     arr[i+1] = arr[n];
     arr[n] = temp;

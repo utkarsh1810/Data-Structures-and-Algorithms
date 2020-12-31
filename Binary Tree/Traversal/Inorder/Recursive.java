@@ -10,14 +10,14 @@ public class Recursive {
     }
   }
 
-  static void postorder(Node root) {
+  static void inorder(Node root) {
     if(root == null) 
       return;
-    postorder(root.left); // Moves to left most child
+    inorder(root.left); // Moves to left most child
 
-    postorder(root.right); // Moves to the right most child
+    System.out.print(root.data+ " ");  // Prints data before right and after left
 
-    System.out.print(root.data+ " ");  // Prints data at last
+    inorder(root.right); // Moves to the right most child
   }
   public static void main(String[] args) {
     Node root = new Node(1);
@@ -33,8 +33,8 @@ public class Recursive {
                     //     2    3
                     //   /  \  / \
                     //  4   5 6   7
-    System.out.println("Postorder traversal of the tree is :"):
-    postorder(root);
+    System.out.println("Inorder traversal of the tree is :");
+    inorder(root);
   }
   
 }

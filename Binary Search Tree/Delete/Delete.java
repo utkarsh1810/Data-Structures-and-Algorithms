@@ -76,6 +76,9 @@ class Delete {
     System.out.println("Level order traversal of the tree is :");
     while(true) {
 
+
+
+      
       int qSize = q.size();
       if(qSize == 0) 
         break;

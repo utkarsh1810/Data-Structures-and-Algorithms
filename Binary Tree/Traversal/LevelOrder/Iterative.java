@@ -33,7 +33,7 @@ class Iterative {
       Node temp = q.peek();    // To get the root 
       System.out.print(temp.data + " "); 
       q.remove();
-      // Both if condition will help to add left as well right element to add in sequence
+      // Both if condition will help to add left as well as right element to add in sequence
       if(temp.left != null)  
         q.add(temp.left);
       if(temp.right != null) 

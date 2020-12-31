@@ -24,7 +24,7 @@ public class PopFront {
     second.next = third;
     third.next = forth; 
 
-    //To insert node at first of the linked-list
+    //To delete node at first of the linked-list
     head=deleteItem(head);
     //To print linked-list
     print(head);
